@@ -17,13 +17,9 @@ def damage_calc(defe):
 def get_user_input():
 	global party_list
 	party_list = []
-	defe = input("Enter opponent's base defense (leave blank for default): ")
-	if defe == "":
-		defe = 10
+	defe = input("Enter opponent's base defense: ")
 	int(defe)
-	hp = input("Enter opponent's HP (leave blank for default): ")
-	if hp == "":
-		hp = 651
+	hp = input("Enter opponent's HP: ")
 	int(hp)
 	for i in range(6):
 		party_atk = int(input(f"Enter the base attack of pokemon number {i+1} in your party: "))
@@ -31,11 +27,6 @@ def get_user_input():
 	global opponent
 	opponent=Opponent(defe=defe,hp=hp)
 	return opponent, party_list
-
-
-#class User:
-#	def __init__(self, atk):
-#		self.atk = atk
 
 class Opponent:
 	def __init__(self, defe, hp):
